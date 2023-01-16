@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ThAmCo.Accounts.Api.Services.AccountDto>
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <h1>Index</h1>
+
+    <table class="table">
+<thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.user_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nickname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.last_login)
+        </th>
+    </tr>
+</thead>
+<tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.user_id)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.nickname)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.last_login)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.user_id">Details</a>
+            </td>
+        </tr>
+    }
+</tbody>
+</table>
